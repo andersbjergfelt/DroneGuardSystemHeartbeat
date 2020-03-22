@@ -1,11 +1,10 @@
 using System;
-using DroneGuardSystem.Protocols;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
 namespace DroneGuardSystem
 {
-    public class Program
+    public class DroneGuardSystem
     {
         public static void Main(string[] args)
         {

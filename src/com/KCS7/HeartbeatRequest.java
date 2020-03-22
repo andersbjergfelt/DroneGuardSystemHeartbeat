@@ -7,12 +7,14 @@ import com.sun.management.UnixOperatingSystemMXBean;
 import java.io.*;
 import java.lang.management.ManagementFactory;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HeartbeatRequest {
 
-
     public static void heartBeatRequest() throws MalformedURLException {
+
 
         HttpURLConnection connection = null;
         String USER_AGENT = "Mozilla/5.0";
@@ -28,30 +30,15 @@ public class HeartbeatRequest {
             connection.setRequestProperty("User-Agent", USER_AGENT);
             connection.setDoOutput(true);
 
-            //Get Response
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-            int responseCode = connection.getResponseCode();
-            System.out.println("\nSending 'GET' request to URL : " + url);
-            System.out.println("Response Code : " + responseCode);
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-            System.out.println(response.toString());
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (connection != null) {
                 connection.disconnect();
             }
-            System.out.println(osBean.getProcessCpuLoad() * 100);
 
         }
+        System.out.println(osBean.getProcessCpuLoad() * 100);
 
     }
 

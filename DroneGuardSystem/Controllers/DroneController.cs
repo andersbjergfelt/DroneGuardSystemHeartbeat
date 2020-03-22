@@ -9,11 +9,6 @@ namespace DroneGuardSystem.Controllers
     [Route("[controller]")]
     public class DroneController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<DroneController> _logger;
 
         public DroneController(ILogger<DroneController> logger)

@@ -17,6 +17,7 @@ public class HeartbeatResponse {
 
         OperatingSystemMXBean osBean = (UnixOperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
             try (
+                    //this equals localhost:6789
                     ServerSocket aServer = new ServerSocket(6789);
                     Socket cn = aServer.accept();
                     BufferedReader bis = new BufferedReader(new InputStreamReader(cn.getInputStream()));
@@ -25,7 +26,6 @@ public class HeartbeatResponse {
                 String line = bis.readLine();
                 while(line != null && !line.equals(""))
                 {
-                    System.out.println(line);
                     line = bis.readLine();
                 }
                 byte[] message="200 OK".getBytes();
@@ -48,7 +48,9 @@ public class HeartbeatResponse {
 
         while(true)
         {
+
             heartBeatResponse();
+            //Thread.sleep(5000);
         }
 
 
