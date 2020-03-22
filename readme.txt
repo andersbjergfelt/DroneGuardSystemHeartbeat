@@ -6,7 +6,7 @@ Linux 'watch' command if you want to run the bash script "DroneGuardToDrone.sh" 
 
 To run the first implementation:
 
-- Go into the DroneGuardSystem and run dotnet run in the terminal
+- Go into the DroneGuardSystem folder and type 'dotnet run' in the terminal
 
 - Go into src/com.KCS7/ compile and run HeartbeatResponse.java program 
 
@@ -15,7 +15,7 @@ To run the first implementation:
 
 To run the second implementation:
 
-- Go into the DroneGuardSystem and run dotnet run in the terminal
+- Go into the DroneGuardSystem folder and type 'dotnet run' in the terminal
 
 - Go into src/com.KCS7/ compile and run HeartbeatRequest.java program 
 
