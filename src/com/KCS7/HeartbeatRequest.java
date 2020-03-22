@@ -30,6 +30,19 @@ public class HeartbeatRequest {
             connection.setRequestProperty("User-Agent", USER_AGENT);
             connection.setDoOutput(true);
 
+            //Get Response
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            int responseCode = connection.getResponseCode();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+            System.out.println(response.toString());
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
