@@ -1,4 +1,4 @@
-Requirement:
+Prerequisites:
 Java
 .NET Core
 Linux 'watch' command if you want to run the bash script "DroneGuardToDrone.sh" (it is not needed)
